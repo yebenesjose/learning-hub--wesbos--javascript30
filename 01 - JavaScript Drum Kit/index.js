@@ -17,5 +17,4 @@ const removeClass = (event) => {
     event.target.classList.remove('playing')
   }
 }
-
 keysParent.addEventListener('transitionend', removeClass)
