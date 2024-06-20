@@ -11,21 +11,20 @@ const musicToMyEars = (e) => {
 globalThis.addEventListener('keydown', musicToMyEars)
 
 // using parent element eventListener propagation
-// const keysParent = document.querySelector('.keys')
+const keysParent = document.querySelector('.keys')
 
-// const removeClass = (event) => {
-//   if (event.target.classList.contains('key')) {
-//     event.target.classList.remove('playing')
-//   }
-// }
-// keysParent.addEventListener('transitionend', removeClass)
+const removeClass = (event) => {
+  const key = event.target.closest('.key')
+  key.classList.remove('playing')
+}
+keysParent.addEventListener('transitionend', removeClass)
 
 // using eventListener in each keyChild element
-const keysChilds = [...document.querySelectorAll('.key')]
+// const keysChilds = [...document.querySelectorAll('.key')]
 
-const removeClass2 = (event) => {
-  event.target.classList.remove('playing')
-}
-keysChilds.forEach((key) => {
-  key.addEventListener('transitionend', removeClass2)
-})
+// const removeClass2 = (event) => {
+//   event.target.classList.remove('playing')
+// }
+// keysChilds.forEach((key) => {
+//   key.addEventListener('transitionend', removeClass2)
+// })
