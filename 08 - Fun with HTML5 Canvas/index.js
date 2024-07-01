@@ -24,7 +24,6 @@ const draw = (e) => {
   lastX = e.offsetX
   lastY = e.offsetY
   hue++
-  console.log(ctx.lineWidth)
 }
 canvas.addEventListener('mousemove', draw)
 canvas.addEventListener('mouseup', () => isDrawing = false)
